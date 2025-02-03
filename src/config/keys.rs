@@ -79,6 +79,9 @@ pub fn key_to_string(modifiers: KMod, key: KCode) -> String {
     if modifiers.contains(KMod::SHIFT) {
         result += "shift_";
     }
+    if modifiers.contains(KMod::META) {
+        result += "meta_";
+    }
     result += &match key {
         KCode::Char('\\') => "\\\\".to_string(),
         KCode::Char('"') => "\\\"".to_string(),
